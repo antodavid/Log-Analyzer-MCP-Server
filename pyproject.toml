@@ -1,0 +1,36 @@
+[project]
+name = "log-analyzer-mcp-server"
+version = "0.1.0"
+description = "FastMCP-based log analyzer server using Model Context Protocol"
+authors = [ { name = "Antony Amson", email = "antony.amson@example.com" } ]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["mcp", "fastmcp", "server", "log-analyzer", "logs", "pattern-analysis"]
+dependencies = [
+    "fastmcp>=2.0.0",
+    "loguru>=0.7.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/antodavid/Log-Analyzer-MCP-Server"
+Repository = "https://github.com/antodavid/Log-Analyzer-MCP-Server"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23",
+    "pytest-cov>=4.1"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["log_analyzer_mcp_server*"]
+namespaces = false
